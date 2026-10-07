@@ -1,0 +1,177 @@
+{
+  "roster": [
+    {
+      "name": "Han Nguyen",
+      "firstName": "Han",
+      "year": "2027",
+      "major": "Computer Science"
+    },
+    {
+      "name": "Diana Tsang",
+      "firstName": "Diana",
+      "year": "2028",
+      "major": "Data Science & Political Science"
+    },
+    {
+      "name": "Jolin Li",
+      "firstName": "Jolin",
+      "year": "2027",
+      "major": "Economics & Statistics"
+    },
+    {
+      "name": "Tiffany Lin",
+      "firstName": "Tiffany",
+      "year": "2027",
+      "major": "Data Science & Philosophy"
+    },
+    {
+      "name": "Ilishaa Nerker",
+      "firstName": "Ilishaa",
+      "year": "2027",
+      "major": "Data Science & English"
+    },
+    {
+      "name": "Ishika Adapa",
+      "firstName": "Ishika",
+      "year": "2028",
+      "major": "Data Science & Economics"
+    },
+    {
+      "name": "Jackleen Guo",
+      "firstName": "Jackleen",
+      "year": "2028",
+      "major": "Data Science & Biology"
+    },
+    {
+      "name": "Sissi Guo",
+      "firstName": "Sissi",
+      "year": "2029",
+      "major": "Economics & Computer Science"
+    },
+    {
+      "name": "Felicia Selbst",
+      "firstName": "Felicia",
+      "year": "2027",
+      "major": "Data Science"
+    },
+    {
+      "name": "Beatrix Kim",
+      "firstName": "Beatrix",
+      "year": "2027",
+      "major": "Data Science"
+    },
+    {
+      "name": "Jenny Ra",
+      "firstName": "Jenny",
+      "year": "2030",
+      "major": "Undecided"
+    },
+    {
+      "name": "Madison Soong",
+      "firstName": "Madison",
+      "year": "2030",
+      "major": "Undecided"
+    },
+    {
+      "name": "Alice Huang",
+      "firstName": "Alice",
+      "year": "2030",
+      "major": "Undecided"
+    }
+  ],
+  "events": [
+    {
+      "title": "Big/Little Mentorship Kickoff",
+      "date": "2026-09-17",
+      "category": "Community",
+      "description": "A charcuterie board night to meet mentors and kick off a semester of course guidance, career conversations, and shared curiosity.",
+      "location": "Wellesley College Science Center",
+      "time": "5:30–6:30 PM"
+    },
+    {
+      "title": "Fall General Meeting",
+      "date": "2026-09-09",
+      "category": "Community",
+      "description": "A chance to meet the E-Board, discover SIDI's mission, and share ideas for the semester ahead.",
+      "location": "Science Center L045",
+      "time": null
+    },
+    {
+      "title": "Fall Orgs Fair",
+      "date": "2026-09-05",
+      "category": "Community",
+      "description": "Welcoming new and returning students to a community where every discipline has a place in data.",
+      "location": "Severance Green",
+      "time": "2–4 PM"
+    },
+    {
+      "title": "Anna Kawakami Alumnae Talk",
+      "date": "2025-10-31",
+      "category": "Talks",
+      "description": "Exploring the intersection of artificial intelligence and human–computer interaction with Wellesley alum Anna Kawakami.",
+      "location": "Science Center H105",
+      "time": "12:45–2 PM"
+    },
+    {
+      "title": "Spring Course Preview",
+      "date": "2025-10-29",
+      "category": "Academic",
+      "description": "A course selection gathering across Data Science, Mathematics, and Computer Science.",
+      "location": "Science Center",
+      "time": "3–4 PM"
+    },
+    {
+      "title": "SQL 101",
+      "date": "2025-10-06",
+      "category": "Workshops",
+      "description": "A hands-on introduction to querying, filtering, joining, and grouping data with SQL, hosted by Tiffany and Ashley.",
+      "location": "Science Center L039",
+      "time": "6:30–7:30 PM"
+    },
+    {
+      "title": "First-Year Bonding",
+      "date": "2025-09-25",
+      "category": "Community",
+      "description": "A gathering for first-year students to connect with the SIDI community.",
+      "location": "Severance DOF",
+      "time": "7–8 PM"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Technology internships for first-years and sophomores",
+      "category": "First & second years",
+      "source": "Harvard Mignone Center for Career Success",
+      "description": "Internships, fellowships, and early-career programs for students starting out in technology.",
+      "url": "https://careerservices.fas.harvard.edu/resources/technology-internships-for-first-years-and-sophomores/"
+    },
+    {
+      "name": "APM List",
+      "category": "Product management",
+      "source": "apmlist.com",
+      "description": "Associate product manager programs, PM internships, and entry-level product roles, with application links and recruiting status.",
+      "url": "https://apmlist.com/"
+    },
+    {
+      "name": "2027 SWE College Jobs",
+      "category": "Software engineering",
+      "source": "SpeedyApply · GitHub",
+      "description": "A regularly updated list of software engineering internships and new-graduate jobs for the 2027 recruiting season.",
+      "url": "https://github.com/speedyapply/2027-SWE-College-Jobs"
+    },
+    {
+      "name": "New Grad Positions",
+      "category": "New graduates",
+      "source": "SimplifyJobs · GitHub",
+      "description": "Full-time opportunities for new graduates in software engineering, quantitative roles, and product management.",
+      "url": "https://github.com/SimplifyJobs/New-Grad-Positions"
+    },
+    {
+      "name": "New Grad 2027",
+      "category": "New graduates",
+      "source": "vanshb03 · GitHub",
+      "description": "Entry-level software and technology roles for 2026 and 2027 graduates, including positions in the US, Canada, and remote teams.",
+      "url": "https://github.com/vanshb03/New-Grad-2027"
+    }
+  ]
+}
