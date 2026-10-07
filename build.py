@@ -75,6 +75,9 @@ events+=''.join(f'<option>{year}</option>' for year in sorted({ev['date'][:4] fo
 events+=f'</select></label></div><p class="event-count" id="event-count" role="status" aria-live="polite">{len(data["events"])} past events</p><div class="event-grid">'
 for ev in sorted(data['events'],key=lambda ev:ev['date'],reverse=True):
  dt=date.fromisoformat(ev['date']);label=dt.strftime('%b %d, %Y').replace(' 0',' ')
+ if ev.get('endDate'):
+  end=date.fromisoformat(ev['endDate'])
+  label=f'{dt.strftime("%b")} {dt.day}–{end.day}, {dt.year}' if (dt.year,dt.month)==(end.year,end.month) else label+' – '+end.strftime('%b %d, %Y').replace(' 0',' ')
  is_flyer=not ev.get('image') and bool(ev.get('flyer'))
  if ev.get('image'):picture=f'<img src="/assets/{e(ev["image"])}.webp" alt="{e(ev["imageAlt"])}" loading="lazy" width="600" height="400">'
  elif is_flyer:picture=f'<a class="flyer-link" href="/assets/{e(ev["flyer"])}.webp" target="_blank" rel="noopener" aria-label="View full {e(ev["title"])} flyer (opens in a new tab)"><img src="/assets/{e(ev["flyer"])}.webp" alt="{e(ev["flyerAlt"])}" loading="lazy" width="900" height="1200"><span class="flyer-expand" aria-hidden="true">{arrow_icon}</span></a>'

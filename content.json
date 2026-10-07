@@ -200,6 +200,26 @@
       "imageAlt": "SIDI table at the Fall Orgs Fair"
     },
     {
+      "title": "BOW DataFest",
+      "date": "2026-04-10",
+      "endDate": "2026-04-12",
+      "category": "Academic",
+      "description": "Teams from Babson, Olin, and Wellesley explored a real-world dataset and shared their findings through presentations. SIDI led introductory Python and Excel workshops during the weekend.",
+      "location": "Jewett Arts Center, Wellesley College",
+      "image": "bow-datafest-2026",
+      "imageAlt": "Participants wearing BOW DataFest shirts at the 2026 event"
+    },
+    {
+      "title": "Excel 101 Workshop",
+      "date": "2026-02-26",
+      "category": "Workshops",
+      "description": "A hands-on workshop on practical Excel skills for research, internships, and data analysis, led by Ashley Y. and Jessica W.",
+      "location": "Science Center N321",
+      "time": "7–8:30 PM",
+      "image": "excel-workshop-2026",
+      "imageAlt": "An instructor helping a student work with Excel during the February 2026 workshop"
+    },
+    {
       "title": "Anna Kawakami Alumnae Talk",
       "date": "2025-10-31",
       "category": "Talks",

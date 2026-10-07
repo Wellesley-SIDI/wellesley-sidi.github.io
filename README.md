@@ -10,6 +10,8 @@ Edit `content.json` to update the E-Board, past events, or resource links. Profi
 
 For events, `image` and `imageAlt` select a photo. If there is no photo, `flyer` and `flyerAlt` select a flyer instead. Use the asset filename without `.webp`; flyers display in full and can be opened at full size.
 
+Use `date` for an event's start date and optional `endDate` for multi-day events; both use `YYYY-MM-DD`.
+
 Photos, logos, fonts, styles, and JavaScript are in `static/`. The original source photos and logos remain in the club's Google Drive. Font licenses are included beside the self-hosted font files in `static/assets/`.
 
 The About page collaboration form sends inquiries to `sidi-e-board@wellesley.edu` through FormSubmit. The mailbox owner must click FormSubmit's one-time activation email before delivery is enabled. Submissions stay on the page with JavaScript; native form submission is the fallback. The form includes required-field validation, a hidden spam trap, and visible success/error feedback. Failed submissions preserve the visitor's text and offer a direct email link.
