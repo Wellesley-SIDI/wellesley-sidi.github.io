@@ -9,16 +9,17 @@ SITE_URL=os.environ.get('SITE_URL','https://wellesley-sidi.github.io'+BASE_PATH)
 out=ROOT/'dist'
 shutil.copytree(ROOT/'static',out,dirs_exist_ok=True)
 e=html.escape
-arrow='<span class="arrow" aria-hidden="true">↗</span>'
+arrow_icon='<svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg>'
+arrow=f'<span class="arrow" aria-hidden="true">{arrow_icon}</span>'
 ornament='<span class="title-sparkles" aria-hidden="true"><i></i><i></i></span>'
 mail='mailto:sidi-e-board@wellesley.edu'
 links=[('About','/'),('People','/people/'),('Past events','/events/'),('Resources','/resources/')]
 def header(active):
  nav=''.join('<a href="'+u+'"'+(' aria-current="page"' if n==active else '')+'>'+n+'</a>' for n,u in links)
- return f'<a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><div class="brand-lockup"><a class="logo" href="/" aria-label="SIDI home"><img src="/assets/logo-02.webp" alt="SIDI" width="130" height="42"></a><span class="college-mark"><img src="/assets/wellesley-college-mark.png" alt="Wellesley College" width="200" height="201"></span></div><button class="menu-button" aria-controls="main-nav" aria-expanded="false">Menu +</button><nav class="nav" id="main-nav" aria-label="Main navigation">{nav}</nav><a class="contact-link" href="{mail}">Say hello ↗</a></div></header>'
+ return f'<a class="skip" href="#main">Skip to content</a><header class="site-header"><div class="wrap header-inner"><div class="brand-lockup"><a class="logo" href="/" aria-label="SIDI home"><img src="/assets/logo-02.webp" alt="SIDI" width="130" height="42"></a><span class="college-mark"><img src="/assets/wellesley-college-mark.png" alt="Wellesley College" width="200" height="201"></span></div><button class="menu-button" aria-controls="main-nav" aria-expanded="false">Menu +</button><nav class="nav" id="main-nav" aria-label="Main navigation">{nav}</nav><a class="contact-link" href="{mail}">Say hello {arrow_icon}</a></div></header>'
 def footer():
  nav=''.join(f'<a href="{u}">{n}</a>' for n,u in links)
- return f'<footer class="site-footer"><div class="wrap"><div class="footer-main"><div class="footer-brand"><div class="footer-logos"><img src="/assets/logo-03.webp" alt="SIDI" loading="lazy"><span class="college-mark"><img src="/assets/wellesley-college-mark.png" alt="Wellesley College" width="200" height="201" loading="lazy"></span></div><p>Student Interdisciplinary Data Initiative<br>Wellesley College</p></div><nav class="footer-column" aria-label="Footer navigation">{nav}</nav><div class="footer-column"><a href="https://www.instagram.com/wellesleysidi/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="{mail}">sidi-e-board@wellesley.edu ↗</a></div></div><div class="footer-bottom"><span>© 2026 SIDI · Wellesley College</span></div></div></footer>'
+ return f'<footer class="site-footer"><div class="wrap"><div class="footer-main"><div class="footer-brand"><div class="footer-logos"><img src="/assets/logo-03.webp" alt="SIDI" loading="lazy"><span class="college-mark"><img src="/assets/wellesley-college-mark.png" alt="Wellesley College" width="200" height="201" loading="lazy"></span></div><p>Student Interdisciplinary Data Initiative<br>Wellesley College</p></div><nav class="footer-column" aria-label="Footer navigation">{nav}</nav><div class="footer-column"><a href="https://www.instagram.com/wellesleysidi/" target="_blank" rel="noopener noreferrer">Instagram {arrow_icon}</a><a href="{mail}">sidi-e-board@wellesley.edu {arrow_icon}</a></div></div><div class="footer-bottom"><span>© 2026 SIDI · Wellesley College</span></div></div></footer>'
 def write_page(active,path,body,desc):
  title=('About SIDI — Wellesley College' if active=='About' else active+' — SIDI at Wellesley')
  route='' if path=='' else path+'/'
@@ -61,7 +62,7 @@ for ev in sorted(data['events'],key=lambda ev:ev['date'],reverse=True):
  dt=date.fromisoformat(ev['date']);label=dt.strftime('%b %d, %Y').replace(' 0',' ')
  is_flyer=not ev.get('image') and bool(ev.get('flyer'))
  if ev.get('image'):picture=f'<img src="/assets/{e(ev["image"])}.webp" alt="{e(ev["imageAlt"])}" loading="lazy" width="600" height="400">'
- elif is_flyer:picture=f'<a class="flyer-link" href="/assets/{e(ev["flyer"])}.webp" target="_blank" rel="noopener" aria-label="View full {e(ev["title"])} flyer (opens in a new tab)"><img src="/assets/{e(ev["flyer"])}.webp" alt="{e(ev["flyerAlt"])}" loading="lazy" width="900" height="1200"><span class="flyer-expand" aria-hidden="true">↗</span></a>'
+ elif is_flyer:picture=f'<a class="flyer-link" href="/assets/{e(ev["flyer"])}.webp" target="_blank" rel="noopener" aria-label="View full {e(ev["title"])} flyer (opens in a new tab)"><img src="/assets/{e(ev["flyer"])}.webp" alt="{e(ev["flyerAlt"])}" loading="lazy" width="900" height="1200"><span class="flyer-expand" aria-hidden="true">{arrow_icon}</span></a>'
  else:picture=f'<div class="event-graphic {"lime" if ev["category"]=="Academic" else ""}" aria-hidden="true"><img src="/assets/logo-03.webp" alt=""><span class="graphic-star">✳</span><span>{dt.strftime("%m.%d.%y")}</span></div>'
  when=f' · {e(ev["time"])}' if ev.get('time') else ''
  events+=f'<article class="event-card {"featured" if ev.get("featured") else ""}" data-category="{e(ev["category"])}" data-year="{dt.year}"><div class="event-image {"flyer" if is_flyer else ""}">{picture}</div><div class="event-copy"><div class="event-meta"><span>{e(ev["category"])}</span><time datetime="{ev["date"]}">{label}</time></div><h2>{e(ev["title"])}</h2><p>{e(ev["description"])}</p><p class="location">{e(ev["location"])}{when}</p></div></article>'
@@ -70,8 +71,8 @@ write_page('Past events','events','<div class="wrap">'+events+'</div>','Explore 
 resources=page_hero('Resources')
 resources+='<div class="resource-list">'
 for r in data['resources']:
- resources+=f'<a class="resource-link" href="{e(r["url"],quote=True)}" target="_blank" rel="noopener noreferrer"><span class="resource-category">{e(r["category"])}</span><div class="resource-copy"><h2>{e(r["name"])}</h2><p>{e(r["description"])}</p><span class="resource-source">{e(r["source"])}</span></div><span class="resource-arrow" aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>'
-resources+='</div><p class="resource-note">Check each listing for current deadlines and eligibility.</p><div class="page-spacing"></div>'
+ resources+=f'<a class="resource-link" href="{e(r["url"],quote=True)}" target="_blank" rel="noopener noreferrer"><span class="resource-category">{e(r["category"])}</span><div class="resource-copy"><h2>{e(r["name"])}</h2><p>{e(r["description"])}</p><span class="resource-source">{e(r["source"])}</span></div><span class="resource-arrow" aria-hidden="true">{arrow_icon}</span><span class="sr-only"> (opens in a new tab)</span></a>'
+resources+='</div><div class="page-spacing"></div>'
 write_page('Resources','resources','<div class="wrap">'+resources+'</div>','Internship, product management, and software engineering resources for students and new graduates.')
 # GitHub Pages does not process _redirects; keep an HTML redirect for old bookmarks.
 redirect=out/'newsletter'
