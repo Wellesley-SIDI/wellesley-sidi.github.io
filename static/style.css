@@ -29,7 +29,7 @@ h1, h2, p { margin-top: 0; }
 .logo img { width: 130px; transition: transform .25s ease; }
 .logo:hover img { transform: rotate(-2deg); }
 .college-mark { display: block; flex-shrink: 0; border-left: 1px solid #bfc1b6; padding-left: 22px; }
-.college-mark img { width: 70px; height: auto; }
+.college-mark img { width: 60px; height: auto; }
 .nav { display: flex; gap: 5px; font-size: 12px; }
 .nav a { white-space: nowrap; padding: 10px 16px; border-radius: 30px; transition: color .2s, background .2s; }
 .nav a:hover { color: var(--blue); background: #eceee4; }
@@ -129,7 +129,7 @@ a:hover .arrow { transform: translate(3px,-3px); }
 .footer-main { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 45px; }
 .footer-logos { display: flex; align-items: center; gap: 22px; margin-bottom: 22px; }
 .footer-logos > img { width: 135px; }
-.footer-logos .college-mark img { width: 76px; }
+.footer-logos .college-mark img { width: 68px; }
 .footer-brand p { font-size: 12px; max-width: 270px; color: var(--muted); }
 .footer-column a { display: block; font-size: 12px; margin: 8px 0; }
 .footer-column a:hover { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
@@ -159,6 +159,7 @@ a:hover .arrow { transform: translate(3px,-3px); }
   .featured .event-copy { padding: 30px; }
 }
 @media (max-width: 760px) {
+  html { scroll-padding-top: 92px; }
   .wrap { width: calc(100% - 36px); }
   .header-inner { height: 76px; }
   .logo img { width: 105px; }
@@ -166,10 +167,10 @@ a:hover .arrow { transform: translate(3px,-3px); }
   .college-mark { padding-left: 12px; }
   .college-mark img { width: 52px; }
   .contact-link { display: none; }
-  .menu-button { display: block; font-size: 12px; }
+  .menu-button { display: block; min-height: 44px; font-size: 13px; }
   .nav { display: none; position: absolute; top: 76px; left: 0; right: 0; padding: 15px 18px 20px; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 15px 20px -22px #20232880; }
   .nav.open { display: flex; flex-direction: column; gap: 5px; }
-  .nav a { padding: 12px 16px; }
+  .nav a { padding: 12px 16px; min-height: 48px; font-size: 15px; }
   .simple-hero { padding: 32px 0; gap: 15px; }
   .simple-hero h1 { font-size: clamp(30px,7.8vw,48px); }
   .title-sparkles { width: 51px; height: 52px; }
@@ -180,43 +181,46 @@ a:hover .arrow { transform: translate(3px,-3px); }
   .hero-top h1 { font-size: clamp(36px,8.7vw,60px); }
   .hero-note { max-width: 100%; }
   .hero-photo { border-radius: 12px; }
-  .hero-photo > img { height: 335px; object-position: 45% center; }
-  .image-caption { font-size: 8px; gap: 16px; }
+  .hero-photo > img { height: clamp(250px,80vw,390px); object-position: 45% center; }
+  .image-caption { font-size: 10px; gap: 16px; }
   .about-copy { grid-template-columns: 1fr; gap: 25px; padding: 38px 0 55px; }
   .about-copy p { font-size: 15px; }
   .about-links a { font-size: 18px; padding: 17px 12px; }
-  .board-term { font-size: 11px; margin-bottom: 22px; padding-bottom: 17px; }
+  .board-term { font-size: 12px; margin-bottom: 22px; padding-bottom: 17px; }
   .people-grid { grid-template-columns: repeat(2,1fr); gap: 20px 14px; }
   .person-card { padding: 5px; border-radius: 13px; }
   .portrait-frame { border-radius: 9px; }
   .person-info { padding: 13px 6px 12px; }
   .person-card h2 { font-size: 16px; line-height: 1.4; margin-bottom: 7px; }
-  .class-year { font-size: 10px; }
-  .major { font-size: 10px; }
+  .class-year { font-size: 11px; }
+  .major { font-size: 12px; line-height: 1.6; }
   .body-end { margin-bottom: 55px; }
   .filters { gap: 5px; }
-  .filter { padding: 8px 12px; font-size: 11px; }
-  .filter-year { width: 100%; margin: 9px 0 0; }
+  .filter { min-height: 44px; padding: 8px 13px; font-size: 12px; }
+  .filter-year { width: 100%; margin: 9px 0 0; font-size: 12px; }
+  .filter-year select { min-height: 44px; font-size: 16px; }
+  .event-count { font-size: 12px; }
   .event-grid { grid-template-columns: repeat(2,1fr); gap: 22px 16px; }
   .event-card.featured { grid-template-columns: 1fr; }
   .featured .event-image { aspect-ratio: 3/2; min-height: 0; }
   .featured .event-copy { padding: 24px; }
   .featured h2 { font-size: 29px; }
-  .event-meta { flex-wrap: wrap; gap: 8px; font-size: 9px; }
+  .event-meta { flex-wrap: wrap; gap: 8px; font-size: 11px; }
   .event-card h2 { font-size: 20px; }
-  .event-card p { font-size: 12px; }
+  .event-card p { font-size: 14px; line-height: 1.8; }
+  .event-card .location { font-size: 12px; }
   .event-copy { padding: 20px; }
   .event-graphic { padding: 18px; }
   .graphic-star { font-size: 90px; right: 10px; top: 28px; }
   .event-graphic > img { width: 75px; }
   .resource-link { grid-template-columns: 1fr 32px; gap: 9px 12px; padding: 23px 20px; border-radius: 13px; }
-  .resource-category { grid-column: 1; padding: 0; font-size: 10px; }
-  .resource-copy { grid-column: 1; }
-  .resource-arrow { grid-column: 2; grid-row: 1/3; width: 32px; height: 32px; font-size: 22px; }
+  .resource-category { grid-column: 1; padding: 0; font-size: 12px; }
+  .resource-copy { grid-column: 1/-1; min-width: 0; }
+  .resource-arrow { grid-column: 2; grid-row: 1; width: 32px; height: 32px; font-size: 22px; }
   .resource-copy h2 { font-size: 19px; }
-  .resource-copy p { font-size: 12px; }
-  .resource-source { font-size: 9px; }
-  .resource-note { font-size: 10px; }
+  .resource-copy p { font-size: 14px; line-height: 1.8; }
+  .resource-source { font-size: 11px; }
+  .resource-note { font-size: 12px; }
   .page-spacing { height: 55px; }
   .site-footer { padding-top: 42px; }
   .footer-main { grid-template-columns: 1fr 1fr; gap: 25px; }
@@ -224,11 +228,25 @@ a:hover .arrow { transform: translate(3px,-3px); }
   .footer-logos { gap: 18px; }
   .footer-logos .college-mark { padding-left: 18px; }
   .footer-logos .college-mark img { width: 68px; }
-  .footer-column a { font-size: 11px; overflow-wrap: anywhere; }
+  .footer-column { grid-column: 1/-1; }
+  nav.footer-column { display: grid; grid-template-columns: 1fr 1fr; gap: 0 25px; }
+  .footer-column a { display: flex; align-items: center; min-height: 44px; margin: 0; font-size: 13px; overflow-wrap: anywhere; }
+  .footer-bottom { font-size: 11px; }
 }
 @media (max-width: 480px) {
   .event-grid { grid-template-columns: 1fr; }
   .event-card.featured { grid-column: auto; }
+  .event-image.flyer { aspect-ratio: 3/4; }
+  .flyer-link { padding: 14px; }
+  .flyer-expand { width: 36px; height: 36px; }
+}
+@media (max-width: 359px) {
+  .people-grid { grid-template-columns: 1fr; }
+  .person-card { padding: 7px; }
+  .person-info { padding: 16px 10px; }
+  .person-card h2 { font-size: 19px; }
+  .class-year { font-size: 12px; }
+  .major { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
