@@ -62,7 +62,6 @@ a:hover .arrow { transform: translate(3px,-3px); }
 .about-links { padding-top: 5px; }
 .about-links a { display: flex; justify-content: space-between; align-items: center; padding: 19px 20px; border-bottom: 1px solid var(--line); font-size: 20px; border-radius: 10px; transition: background .2s, color .2s; }
 .about-links a:hover { background: var(--lime); color: var(--blue); }
-.board-term { font-size: 12px; margin: 0 0 30px; padding-bottom: 20px; border-bottom: 1px solid var(--line); color: var(--muted); }
 .people-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px 24px; }
 .person-card { min-width: 0; padding: 8px; border: 1px solid #e6e8df; border-radius: 18px; background: #fffef9; transition: transform .25s, box-shadow .25s, border-color .25s; }
 .person-card:hover { transform: translateY(-5px); border-color: #cdd6b1; box-shadow: 0 16px 35px -20px #2e34884d; }
@@ -70,6 +69,7 @@ a:hover .arrow { transform: translate(3px,-3px); }
 .person-card .portrait { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: var(--fx) var(--fy); transform-origin: var(--fx) var(--fy); transform: translate(calc(50% - var(--fx)), calc(50% - var(--fy))) scale(var(--zoom)); }
 .person-info { padding: 18px 10px 16px; }
 .person-card h2 { font: 600 19px/1.45 var(--body); letter-spacing: -.035em; margin-bottom: 8px; }
+.person-role { font-size: 12px; font-weight: 600; color: var(--blue); line-height: 1.5; margin: 0 0 12px; text-wrap: balance; }
 .class-year { font-size: 11px; color: var(--blue); margin: 0 0 4px; }
 .major { font-size: 12px; color: var(--muted); line-height: 1.65; margin: 0; }
 .initials { aspect-ratio: 4 / 5; display: grid; align-content: center; justify-items: center; background: var(--lime); border-radius: 12px; }
@@ -187,7 +187,6 @@ a:hover .arrow { transform: translate(3px,-3px); }
   .about-copy { grid-template-columns: 1fr; gap: 25px; padding: 38px 0 55px; }
   .about-copy p { font-size: 15px; }
   .about-links a { font-size: 18px; padding: 17px 12px; }
-  .board-term { font-size: 12px; margin-bottom: 22px; padding-bottom: 17px; }
   .people-grid { grid-template-columns: repeat(2,1fr); gap: 20px 14px; }
   .person-card { padding: 5px; border-radius: 13px; }
   .portrait-frame { border-radius: 9px; }

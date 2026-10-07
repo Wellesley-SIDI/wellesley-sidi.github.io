@@ -39,7 +39,7 @@ about=f"""
 </div>"""
 write_page('About','',about,'SIDI is the Student Interdisciplinary Data Initiative at Wellesley College. A community for everyone curious about data.')
 people=page_hero('People')
-people+='<p class="board-term">2026–2027 E-Board</p><div class="people-grid body-end">'
+people+='<div class="people-grid body-end">'
 for p in data['roster']:
  key=p['firstName'].lower()
  if key=='ilishaa':key='ilisha'
@@ -47,9 +47,10 @@ for p in data['roster']:
  fx,fy,zoom=p.get('portraitFocus',[50,50,1])
  if image.exists():portrait=f'<div class="portrait-frame" style="--fx:{fx}%;--fy:{fy}%;--zoom:{zoom}"><img class="portrait" src="/assets/{key}.webp" alt="{e(p["name"])}" loading="lazy" width="400" height="500"></div>'
  else:portrait=f'<div class="initials"><strong aria-hidden="true">{"".join(w[0] for w in p["name"].split())}</strong><small>Meet {e(p["firstName"])}</small></div>'
+ role=f'<p class="person-role">{e(p["role"])}</p>' if p.get('role') else ''
  year=f'<p class="class-year">Class of {e(p["year"])}</p>' if p['year'] else ''
  major=f'<p class="major">{e(p["major"])}</p>' if p['major'] else ''
- people+=f'<article class="person-card">{portrait}<div class="person-info"><h2>{e(p["name"])}</h2>{year}{major}</div></article>'
+ people+=f'<article class="person-card">{portrait}<div class="person-info"><h2>{e(p["name"])}</h2>{role}{year}{major}</div></article>'
 people+='</div>'
 write_page('People','people','<div class="wrap">'+people+'</div>','Meet the 2026–2027 SIDI E-Board at Wellesley College.')
 events=page_hero('Past events')

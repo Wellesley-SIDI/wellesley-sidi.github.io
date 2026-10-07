@@ -9,7 +9,8 @@
         52,
         56,
         2.1
-      ]
+      ],
+      "role": "Co-President"
     },
     {
       "name": "Diana Tsang",
@@ -20,7 +21,8 @@
         54,
         35,
         1.5
-      ]
+      ],
+      "role": "Co-President"
     },
     {
       "name": "Jolin Li",
@@ -31,7 +33,8 @@
         45,
         40,
         1.35
-      ]
+      ],
+      "role": "Secretary"
     },
     {
       "name": "Tiffany Lin",
@@ -42,7 +45,8 @@
         58,
         46,
         1.5
-      ]
+      ],
+      "role": "Statistical Consultation Chair"
     },
     {
       "name": "Ilishaa Nerker",
@@ -53,7 +57,8 @@
         45,
         39,
         1.65
-      ]
+      ],
+      "role": "Statistical Consultant"
     },
     {
       "name": "Ishika Adapa",
@@ -64,7 +69,8 @@
         44,
         43,
         1.3
-      ]
+      ],
+      "role": "Treasurer"
     },
     {
       "name": "Jackleen Guo",
@@ -75,7 +81,8 @@
         44,
         55,
         1.35
-      ]
+      ],
+      "role": "Events Chair"
     },
     {
       "name": "Sissi Guo",
@@ -86,7 +93,8 @@
         58,
         38,
         1.4
-      ]
+      ],
+      "role": "Newsletter Chair"
     },
     {
       "name": "Felicia Selbst",
@@ -97,7 +105,8 @@
         48,
         45,
         1.2
-      ]
+      ],
+      "role": "Publicity Chair"
     },
     {
       "name": "Beatrix Kim",
@@ -108,7 +117,8 @@
         56,
         48,
         1.8
-      ]
+      ],
+      "role": "Publicity Chair"
     },
     {
       "name": "Jenny Ra",
@@ -119,7 +129,8 @@
         54,
         57,
         2.3
-      ]
+      ],
+      "role": "Publicity Chair"
     },
     {
       "name": "Madison Soong",
@@ -130,7 +141,8 @@
         59,
         47,
         2.0
-      ]
+      ],
+      "role": "First-Year Representative"
     },
     {
       "name": "Alice Huang",
@@ -141,7 +153,8 @@
         52,
         56,
         2.25
-      ]
+      ],
+      "role": "First-Year Representative"
     }
   ],
   "events": [

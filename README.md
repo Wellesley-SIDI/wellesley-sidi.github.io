@@ -6,7 +6,7 @@ Website for the Student Interdisciplinary Data Initiative, with About, People, P
 
 ## Update the site
 
-Edit `content.json` to update the E-Board, past events, or resource links. Profiles show only each person's name, class year, and major. The page templates and About copy are in `build.py`.
+Edit `content.json` to update the E-Board, past events, or resource links. Profiles show each person's name, role, class year, and major. The page templates and About copy are in `build.py`.
 
 For events, `image` and `imageAlt` select a photo. If there is no photo, `flyer` and `flyerAlt` select a flyer instead. Use the asset filename without `.webp`; flyers display in full and can be opened at full size.
 
