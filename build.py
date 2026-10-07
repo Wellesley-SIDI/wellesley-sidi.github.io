@@ -59,10 +59,12 @@ events+=''.join(f'<option>{year}</option>' for year in sorted({ev['date'][:4] fo
 events+=f'</select></label></div><p class="event-count" id="event-count" role="status" aria-live="polite">{len(data["events"])} past events</p><div class="event-grid">'
 for ev in sorted(data['events'],key=lambda ev:ev['date'],reverse=True):
  dt=date.fromisoformat(ev['date']);label=dt.strftime('%b %d, %Y').replace(' 0',' ')
+ is_flyer=not ev.get('image') and bool(ev.get('flyer'))
  if ev.get('image'):picture=f'<img src="/assets/{e(ev["image"])}.webp" alt="{e(ev["imageAlt"])}" loading="lazy" width="600" height="400">'
+ elif is_flyer:picture=f'<a class="flyer-link" href="/assets/{e(ev["flyer"])}.webp" target="_blank" rel="noopener" aria-label="View full {e(ev["title"])} flyer (opens in a new tab)"><img src="/assets/{e(ev["flyer"])}.webp" alt="{e(ev["flyerAlt"])}" loading="lazy" width="900" height="1200"><span class="flyer-expand" aria-hidden="true">↗</span></a>'
  else:picture=f'<div class="event-graphic {"lime" if ev["category"]=="Academic" else ""}" aria-hidden="true"><img src="/assets/logo-03.webp" alt=""><span class="graphic-star">✳</span><span>{dt.strftime("%m.%d.%y")}</span></div>'
  when=f' · {e(ev["time"])}' if ev.get('time') else ''
- events+=f'<article class="event-card {"featured" if ev.get("featured") else ""}" data-category="{e(ev["category"])}" data-year="{dt.year}"><div class="event-image">{picture}</div><div class="event-copy"><div class="event-meta"><span>{e(ev["category"])}</span><time datetime="{ev["date"]}">{label}</time></div><h2>{e(ev["title"])}</h2><p>{e(ev["description"])}</p><p class="location">{e(ev["location"])}{when}</p></div></article>'
+ events+=f'<article class="event-card {"featured" if ev.get("featured") else ""}" data-category="{e(ev["category"])}" data-year="{dt.year}"><div class="event-image {"flyer" if is_flyer else ""}">{picture}</div><div class="event-copy"><div class="event-meta"><span>{e(ev["category"])}</span><time datetime="{ev["date"]}">{label}</time></div><h2>{e(ev["title"])}</h2><p>{e(ev["description"])}</p><p class="location">{e(ev["location"])}{when}</p></div></article>'
 events+='</div><p class="empty-state" id="event-empty" hidden>No events match this combination. Try another category or year.</p><div class="page-spacing"></div>'
 write_page('Past events','events','<div class="wrap">'+events+'</div>','Explore SIDI’s past workshops, mentorship gatherings, alumnae talks, and community events.')
 resources=page_hero('Resources')

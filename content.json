@@ -172,7 +172,9 @@
       "category": "Community",
       "description": "A chance to meet the E-Board, discover SIDI's mission, and share ideas for the semester ahead.",
       "location": "Science Center L045",
-      "time": null
+      "time": "7–8 PM",
+      "flyer": "general-meeting-flyer",
+      "flyerAlt": "Flyer for the September 9, 2026 SIDI Open Meeting"
     },
     {
       "title": "Fall Orgs Fair",
@@ -200,7 +202,9 @@
       "category": "Academic",
       "description": "A course selection gathering across Data Science, Mathematics, and Computer Science.",
       "location": "Science Center",
-      "time": "3–4 PM"
+      "time": "3–4 PM",
+      "flyer": "course-preview-flyer",
+      "flyerAlt": "Flyer for the October 29, 2025 Spring Course Preview"
     },
     {
       "title": "SQL 101",
@@ -218,7 +222,9 @@
       "category": "Community",
       "description": "A gathering for first-year students to connect with the SIDI community.",
       "location": "Severance DOF",
-      "time": "7–8 PM"
+      "time": "7–8 PM",
+      "flyer": "first-year-bonding-flyer",
+      "flyerAlt": "Flyer for the September 25, 2025 First-Year Bonding game night"
     }
   ],
   "resources": [

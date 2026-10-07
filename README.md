@@ -8,6 +8,8 @@ Website for the Student Interdisciplinary Data Initiative, with About, People, P
 
 Edit `content.json` to update the E-Board, past events, or resource links. Profiles show only each person's name, class year, and major. The page templates and About copy are in `build.py`.
 
+For events, `image` and `imageAlt` select a photo. If there is no photo, `flyer` and `flyerAlt` select a flyer instead. Use the asset filename without `.webp`; flyers display in full and can be opened at full size.
+
 Photos, logos, fonts, styles, and JavaScript are in `static/`. The original source photos and logos remain in the club's Google Drive. Font licenses are included beside the self-hosted font files in `static/assets/`.
 
 Every push to `main` builds the site and publishes it to GitHub Pages through the workflow in `.github/workflows/pages.yml`. Check the repository's Actions tab for deployment progress. The generated `dist/` directory is not committed.

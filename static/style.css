@@ -88,6 +88,11 @@ a:hover .arrow { transform: translate(3px,-3px); }
 .event-card[hidden] { display: none !important; }
 .event-image { overflow: hidden; aspect-ratio: 3/2; }
 .event-image > img { width: 100%; height: 100%; object-fit: cover; }
+.event-image.flyer { background: #eceee5; }
+.flyer-link { display: block; position: relative; height: 100%; padding: 12px; cursor: zoom-in; }
+.flyer-link:focus-visible { outline-offset: -5px; }
+.flyer-link img { width: 100%; height: 100%; object-fit: contain; }
+.flyer-expand { position: absolute; right: 12px; bottom: 12px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--paper); border: 1px solid var(--line); color: var(--blue); font: 21px/1 Arial; }
 .event-copy { padding: 24px; }
 .event-meta { display: flex; justify-content: space-between; gap: 15px; align-items: center; font-size: 10px; color: var(--muted); margin-bottom: 16px; }
 .event-meta > span { background: #edf0e4; color: var(--blue); padding: 4px 9px; border-radius: 20px; }
