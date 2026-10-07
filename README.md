@@ -2,7 +2,7 @@
 
 Website for the Student Interdisciplinary Data Initiative, with About, People, Past events, and Resources pages.
 
-**Website:** https://hanxngn05.github.io/sidi/
+**Website:** https://wellesley-sidi.github.io/
 
 ## Update the site
 
@@ -21,6 +21,6 @@ BASE_PATH='' SITE_URL=http://localhost:4173 python3 build.py
 python3 -m http.server 4173 --directory dist
 ```
 
-Open http://localhost:4173. Run `python3 build.py` again to generate the production site at `/sidi/`.
+Open http://localhost:4173. Run `python3 build.py` again to generate the production site at `/`.
 
 `BASE_PATH` controls the URL prefix, and `SITE_URL` controls canonical and social image URLs. Update these values in the publishing workflow if the site moves to a different repository or a custom domain.

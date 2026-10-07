@@ -3,9 +3,9 @@ from pathlib import Path
 from datetime import date
 ROOT=Path(__file__).parent
 data=json.loads((ROOT/'content.json').read_text())
-BASE_PATH='/' + os.environ.get('BASE_PATH','sidi').strip('/')
+BASE_PATH='/' + os.environ.get('BASE_PATH','').strip('/')
 if BASE_PATH=='/':BASE_PATH=''
-SITE_URL=os.environ.get('SITE_URL','https://hanxngn05.github.io'+BASE_PATH).rstrip('/')
+SITE_URL=os.environ.get('SITE_URL','https://wellesley-sidi.github.io'+BASE_PATH).rstrip('/')
 out=ROOT/'dist'
 shutil.copytree(ROOT/'static',out,dirs_exist_ok=True)
 e=html.escape
