@@ -35,6 +35,21 @@ about=f"""
 <div class="hero-photo"><img src="/assets/fair-2.webp" alt="SIDI members welcoming students at the Wellesley Fall Orgs Fair" fetchpriority="high" width="1200" height="800"></div>
 </section>
 <section class="about-copy"><div><p>We bring students across disciplines together through workshops, peer mentorship, and conversations about data. Explore new skills, meet students and alums, and discover how data connects to your interests.</p><p>All Wellesley class years, majors, and experience levels are welcome. There are no membership fees.</p></div><div class="about-links"><a href="/people/">People {arrow}</a><a href="/events/">Past events {arrow}</a><a href="/resources/">Resources {arrow}</a></div></section>
+<section id="collaborate" class="collaborate" aria-labelledby="collaborate-heading">
+<h2 id="collaborate-heading">Collaborate<br> with us.</h2>
+<form id="collaboration-form" class="collaboration-form" action="https://formsubmit.co/sidi-e-board@wellesley.edu" method="POST" data-endpoint="https://formsubmit.co/ajax/sidi-e-board@wellesley.edu">
+<input type="hidden" name="_subject" value="SIDI collaboration inquiry">
+<input type="hidden" name="_template" value="table">
+<div class="form-honey" aria-hidden="true"><label for="collab-website">Leave this field blank</label><input id="collab-website" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+<div class="form-field"><label for="collab-name">Name</label><input id="collab-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+<div class="form-field"><label for="collab-email">Email</label><input id="collab-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+<div class="form-field form-wide"><label for="collab-organization">Organization <span>(optional)</span></label><input id="collab-organization" name="organization" type="text" autocomplete="organization" maxlength="160" placeholder="Company or student group"></div>
+<div class="form-field form-wide"><label for="collab-message">Message</label><textarea id="collab-message" name="message" rows="5" maxlength="3000" placeholder="Tell us what you have in mind." required></textarea></div>
+<div class="form-actions form-wide"><button class="collaboration-submit" type="submit">Send message {arrow_icon}</button></div>
+<p id="collaboration-status" class="form-status form-wide" role="status" aria-live="polite" hidden></p>
+<p id="collaboration-fallback" class="form-note form-wide" hidden>You can also <a href="{mail}">email us directly</a>.</p>
+</form>
+</section>
 </div>"""
 write_page('About','',about,'SIDI is the Student Interdisciplinary Data Initiative at Wellesley College. A community for everyone curious about data.')
 people=page_hero('People')

@@ -12,6 +12,8 @@ For events, `image` and `imageAlt` select a photo. If there is no photo, `flyer`
 
 Photos, logos, fonts, styles, and JavaScript are in `static/`. The original source photos and logos remain in the club's Google Drive. Font licenses are included beside the self-hosted font files in `static/assets/`.
 
+The About page collaboration form sends inquiries to `sidi-e-board@wellesley.edu` through FormSubmit. The mailbox owner must click FormSubmit's one-time activation email before delivery is enabled. Submissions stay on the page with JavaScript; native form submission is the fallback. The form includes required-field validation, a hidden spam trap, and visible success/error feedback. Failed submissions preserve the visitor's text and offer a direct email link.
+
 Every push to `main` builds the site and publishes it to GitHub Pages through the workflow in `.github/workflows/pages.yml`. Check the repository's Actions tab for deployment progress. The generated `dist/` directory is not committed.
 
 ## Preview locally

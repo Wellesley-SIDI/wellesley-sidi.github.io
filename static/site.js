@@ -35,6 +35,51 @@ filters.forEach(button => button.addEventListener('click', () => {
 }));
 year?.addEventListener('change', filterEvents);
 
+const collaborationForm = document.querySelector('#collaboration-form');
+collaborationForm?.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (collaborationForm.getAttribute('aria-busy') === 'true' || !collaborationForm.reportValidity()) return;
+  const fields = new FormData(collaborationForm);
+  if (fields.get('_honey')) return;
+  const button = collaborationForm.querySelector('button[type="submit"]');
+  const status = document.querySelector('#collaboration-status');
+  const fallback = document.querySelector('#collaboration-fallback');
+  const buttonContent = button.innerHTML;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000);
+  button.disabled = true;
+  button.textContent = 'Sending…';
+  collaborationForm.setAttribute('aria-busy', 'true');
+  status.hidden = true;
+  fallback.hidden = true;
+  try {
+    const response = await fetch(collaborationForm.dataset.endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(Object.fromEntries(fields)),
+      signal: controller.signal
+    });
+    const result = await response.json();
+    if (!response.ok || ![true, 'true'].includes(result.success)) throw new Error('Submission was not accepted');
+    if (/activat|confirm.*email/i.test(result.message || '')) throw new Error('Form activation is pending');
+    status.dataset.state = 'success';
+    status.textContent = 'Thank you! Your message has been submitted to SIDI.';
+    collaborationForm.reset();
+  } catch (error) {
+    status.dataset.state = 'error';
+    status.textContent = error.name === 'AbortError'
+      ? 'We couldn’t confirm delivery. Your message is still here; please email us directly if needed.'
+      : 'We couldn’t send your message. Your text is still here so you can try again or email us directly.';
+    fallback.hidden = false;
+  } finally {
+    clearTimeout(timeout);
+    status.hidden = false;
+    button.disabled = false;
+    button.innerHTML = buttonContent;
+    collaborationForm.removeAttribute('aria-busy');
+  }
+});
+
 // Small, short-lived decorations; never intercept pointer or keyboard input.
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
