@@ -10,6 +10,7 @@ out=ROOT/'dist'
 shutil.copytree(ROOT/'static',out,dirs_exist_ok=True)
 e=html.escape
 arrow='<span class="arrow" aria-hidden="true">↗</span>'
+ornament='<span class="title-sparkles" aria-hidden="true"><i></i><i></i></span>'
 mail='mailto:sidi-e-board@wellesley.edu'
 links=[('About','/'),('People','/people/'),('Past events','/events/'),('Resources','/resources/')]
 def header(active):
@@ -25,7 +26,7 @@ def write_page(active,path,body,desc):
  doc=re.sub(r'((?:href|src)=")/(?!/)',lambda m:m[1]+BASE_PATH+'/',doc)
  dest=out/path;dest.mkdir(parents=True,exist_ok=True);(dest/'index.html').write_text(doc)
 def page_hero(title):
- return f'<section class="page-hero simple-hero"><h1>{title}</h1></section>'
+ return f'<section class="page-hero simple-hero"><h1>{title}</h1>{ornament}</section>'
 about=f"""
 <div class="wrap">
 <section class="hero about-hero">
@@ -42,24 +43,26 @@ for p in data['roster']:
  key=p['firstName'].lower()
  if key=='ilishaa':key='ilisha'
  image=out/'assets'/f'{key}.webp'
- if image.exists():portrait=f'<img class="portrait" src="/assets/{key}.webp" alt="{e(p["name"])}" loading="lazy" width="400" height="480">'
+ fx,fy,zoom=p.get('portraitFocus',[50,50,1])
+ if image.exists():portrait=f'<div class="portrait-frame" style="--fx:{fx}%;--fy:{fy}%;--zoom:{zoom}"><img class="portrait" src="/assets/{key}.webp" alt="{e(p["name"])}" loading="lazy" width="400" height="500"></div>'
  else:portrait=f'<div class="initials"><strong aria-hidden="true">{"".join(w[0] for w in p["name"].split())}</strong><small>Meet {e(p["firstName"])}</small></div>'
  year=f'<p class="class-year">Class of {e(p["year"])}</p>' if p['year'] else ''
  major=f'<p class="major">{e(p["major"])}</p>' if p['major'] else ''
- people+=f'<article class="person-card">{portrait}<h2>{e(p["name"])}</h2>{year}{major}</article>'
+ people+=f'<article class="person-card">{portrait}<div class="person-info"><h2>{e(p["name"])}</h2>{year}{major}</div></article>'
 people+='</div>'
 write_page('People','people','<div class="wrap">'+people+'</div>','Meet the 2026–2027 SIDI E-Board at Wellesley College.')
 events=page_hero('Past events')
 events+='<div class="filters" aria-label="Filter past events">'
 for cat in ['All','Community','Workshops','Talks','Academic']:events+=f'<button type="button" class="filter" data-category="{cat}" aria-pressed="{str(cat=="All").lower()}">{cat}</button>'
-events+='<label class="filter-year" for="event-year">Year<select id="event-year"><option value="">All years</option><option>2026</option><option>2025</option></select></label></div><p class="event-count" id="event-count" role="status" aria-live="polite">7 past events</p><div class="event-grid">'
-photos={0:('mentorship','SIDI Big/Little mentorship kickoff in the Science Center'),2:('fair-2','SIDI table at the Fall Orgs Fair'),3:('talk-0','Attendees at the Anna Kawakami alumnae talk'),5:('sql-0','Students working together at SQL 101')}
-graphics={1:'General<br>Meeting',4:'Course<br>Preview',6:'First-Year<br>Bonding'}
-for i,ev in enumerate(data['events']):
+events+='<label class="filter-year" for="event-year">Year<select id="event-year"><option value="">All years</option>'
+events+=''.join(f'<option>{year}</option>' for year in sorted({ev['date'][:4] for ev in data['events']},reverse=True))
+events+=f'</select></label></div><p class="event-count" id="event-count" role="status" aria-live="polite">{len(data["events"])} past events</p><div class="event-grid">'
+for ev in sorted(data['events'],key=lambda ev:ev['date'],reverse=True):
  dt=date.fromisoformat(ev['date']);label=dt.strftime('%b %d, %Y').replace(' 0',' ')
- if i in photos:picture=f'<img src="/assets/{photos[i][0]}.webp" alt="{photos[i][1]}" loading="lazy" width="600" height="400">'
- else:picture=f'<div class="event-graphic {"lime" if i==4 else ""}" aria-hidden="true"><div class="graphic-top">SIDI / {e(ev["category"])}</div><div class="graphic-title">{graphics[i]}</div><div class="graphic-bottom"><span>{dt.strftime("%m.%d.%y")}</span><span>✳</span></div></div>'
- events+=f'<article class="event-card" data-category="{e(ev["category"])}" data-year="{dt.year}">{picture}<div class="event-meta"><span>{e(ev["category"])}</span><time datetime="{ev["date"]}">{label}</time></div><h2>{e(ev["title"])}</h2><p>{e(ev["description"])}</p><p class="location">{e(ev["location"])}</p></article>'
+ if ev.get('image'):picture=f'<img src="/assets/{e(ev["image"])}.webp" alt="{e(ev["imageAlt"])}" loading="lazy" width="600" height="400">'
+ else:picture=f'<div class="event-graphic {"lime" if ev["category"]=="Academic" else ""}" aria-hidden="true"><img src="/assets/logo-03.webp" alt=""><span class="graphic-star">✳</span><span>{dt.strftime("%m.%d.%y")}</span></div>'
+ when=f' · {e(ev["time"])}' if ev.get('time') else ''
+ events+=f'<article class="event-card {"featured" if ev.get("featured") else ""}" data-category="{e(ev["category"])}" data-year="{dt.year}"><div class="event-image">{picture}</div><div class="event-copy"><div class="event-meta"><span>{e(ev["category"])}</span><time datetime="{ev["date"]}">{label}</time></div><h2>{e(ev["title"])}</h2><p>{e(ev["description"])}</p><p class="location">{e(ev["location"])}{when}</p></div></article>'
 events+='</div><p class="empty-state" id="event-empty" hidden>No events match this combination. Try another category or year.</p><div class="page-spacing"></div>'
 write_page('Past events','events','<div class="wrap">'+events+'</div>','Explore SIDI’s past workshops, mentorship gatherings, alumnae talks, and community events.')
 resources=page_hero('Resources')

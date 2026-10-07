@@ -4,89 +4,167 @@
       "name": "Han Nguyen",
       "firstName": "Han",
       "year": "2027",
-      "major": "Computer Science"
+      "major": "Computer Science",
+      "portraitFocus": [
+        52,
+        56,
+        2.1
+      ]
     },
     {
       "name": "Diana Tsang",
       "firstName": "Diana",
       "year": "2028",
-      "major": "Data Science & Political Science"
+      "major": "Data Science & Political Science",
+      "portraitFocus": [
+        54,
+        35,
+        1.5
+      ]
     },
     {
       "name": "Jolin Li",
       "firstName": "Jolin",
       "year": "2027",
-      "major": "Economics & Statistics"
+      "major": "Economics & Statistics",
+      "portraitFocus": [
+        45,
+        40,
+        1.35
+      ]
     },
     {
       "name": "Tiffany Lin",
       "firstName": "Tiffany",
       "year": "2027",
-      "major": "Data Science & Philosophy"
+      "major": "Data Science & Philosophy",
+      "portraitFocus": [
+        58,
+        46,
+        1.5
+      ]
     },
     {
       "name": "Ilishaa Nerker",
       "firstName": "Ilishaa",
       "year": "2027",
-      "major": "Data Science & English"
+      "major": "Data Science & English",
+      "portraitFocus": [
+        45,
+        39,
+        1.65
+      ]
     },
     {
       "name": "Ishika Adapa",
       "firstName": "Ishika",
       "year": "2028",
-      "major": "Data Science & Economics"
+      "major": "Data Science & Economics",
+      "portraitFocus": [
+        44,
+        43,
+        1.3
+      ]
     },
     {
       "name": "Jackleen Guo",
       "firstName": "Jackleen",
       "year": "2028",
-      "major": "Data Science & Biology"
+      "major": "Data Science & Biology",
+      "portraitFocus": [
+        44,
+        55,
+        1.35
+      ]
     },
     {
       "name": "Sissi Guo",
       "firstName": "Sissi",
       "year": "2029",
-      "major": "Economics & Computer Science"
+      "major": "Economics & Computer Science",
+      "portraitFocus": [
+        58,
+        38,
+        1.4
+      ]
     },
     {
       "name": "Felicia Selbst",
       "firstName": "Felicia",
       "year": "2027",
-      "major": "Data Science"
+      "major": "Data Science",
+      "portraitFocus": [
+        48,
+        45,
+        1.2
+      ]
     },
     {
       "name": "Beatrix Kim",
       "firstName": "Beatrix",
       "year": "2027",
-      "major": "Data Science"
+      "major": "Data Science",
+      "portraitFocus": [
+        56,
+        48,
+        1.8
+      ]
     },
     {
       "name": "Jenny Ra",
       "firstName": "Jenny",
       "year": "2030",
-      "major": "Undecided"
+      "major": "Undecided",
+      "portraitFocus": [
+        54,
+        57,
+        2.3
+      ]
     },
     {
       "name": "Madison Soong",
       "firstName": "Madison",
       "year": "2030",
-      "major": "Undecided"
+      "major": "Undecided",
+      "portraitFocus": [
+        59,
+        47,
+        2.0
+      ]
     },
     {
       "name": "Alice Huang",
       "firstName": "Alice",
       "year": "2030",
-      "major": "Undecided"
+      "major": "Undecided",
+      "portraitFocus": [
+        52,
+        56,
+        2.25
+      ]
     }
   ],
   "events": [
+    {
+      "title": "SQL 101",
+      "date": "2026-10-06",
+      "category": "Workshops",
+      "description": "A beginner-friendly, hands-on introduction to working with databases: querying, filtering, and combining data with SQL. Students practiced together with guidance from the SIDI E-Board.",
+      "location": "Science Center L043",
+      "time": "6:30–7:30 PM",
+      "image": "sql-2026",
+      "imageAlt": "SIDI members helping students practice SQL during the October 2026 workshop",
+      "featured": true
+    },
     {
       "title": "Big/Little Mentorship Kickoff",
       "date": "2026-09-17",
       "category": "Community",
       "description": "A charcuterie board night to meet mentors and kick off a semester of course guidance, career conversations, and shared curiosity.",
       "location": "Wellesley College Science Center",
-      "time": "5:30–6:30 PM"
+      "time": "5:30–6:30 PM",
+      "image": "mentorship",
+      "imageAlt": "SIDI Big/Little mentorship kickoff in the Science Center"
     },
     {
       "title": "Fall General Meeting",
@@ -102,7 +180,9 @@
       "category": "Community",
       "description": "Welcoming new and returning students to a community where every discipline has a place in data.",
       "location": "Severance Green",
-      "time": "2–4 PM"
+      "time": "2–4 PM",
+      "image": "fair-2",
+      "imageAlt": "SIDI table at the Fall Orgs Fair"
     },
     {
       "title": "Anna Kawakami Alumnae Talk",
@@ -110,7 +190,9 @@
       "category": "Talks",
       "description": "Exploring the intersection of artificial intelligence and human–computer interaction with Wellesley alum Anna Kawakami.",
       "location": "Science Center H105",
-      "time": "12:45–2 PM"
+      "time": "12:45–2 PM",
+      "image": "talk-0",
+      "imageAlt": "Attendees at the Anna Kawakami alumnae talk"
     },
     {
       "title": "Spring Course Preview",
@@ -126,7 +208,9 @@
       "category": "Workshops",
       "description": "A hands-on introduction to querying, filtering, joining, and grouping data with SQL, hosted by Tiffany and Ashley.",
       "location": "Science Center L039",
-      "time": "6:30–7:30 PM"
+      "time": "6:30–7:30 PM",
+      "image": "sql-0",
+      "imageAlt": "Students working together at SQL 101 in 2025"
     },
     {
       "title": "First-Year Bonding",
